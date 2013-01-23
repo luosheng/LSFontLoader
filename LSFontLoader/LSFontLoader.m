@@ -88,4 +88,9 @@
 	[self loadFontForFamilyName:fontInfo.familyName];
 }
 
+- (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset {
+	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
+	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontPath stringByAppendingPathComponent:fontInfo.familyName]];
+}
+
 @end
