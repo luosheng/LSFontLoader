@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042024CC16B0104E007148BA /* LSFontInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 042024CB16B0104E007148BA /* LSFontInfo.m */; };
+		042024D316B01633007148BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448844416AFD9A8000EA0FB /* CoreGraphics.framework */; };
+		042024D416B0163B007148BA /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C1782816AFE9D40051636D /* libz.1.2.5.dylib */; };
+		042024D516B01640007148BA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042024CE16B013CD007148BA /* CoreText.framework */; };
+		04303F4E16B0179A005F9DA0 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C1782816AFE9D40051636D /* libz.1.2.5.dylib */; };
+		04303F4F16B017D7005F9DA0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042024CE16B013CD007148BA /* CoreText.framework */; };
 		0448842E16AFD824000EA0FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842D16AFD824000EA0FB /* Foundation.framework */; };
 		0448843316AFD824000EA0FB /* LSFontLoader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0448843216AFD824000EA0FB /* LSFontLoader.h */; };
 		0448843516AFD824000EA0FB /* LSFontLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448843416AFD824000EA0FB /* LSFontLoader.m */; };
@@ -38,7 +44,6 @@
 		04C1782116AFE80A0051636D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780916AFE80A0051636D /* unzip.c */; };
 		04C1782216AFE80A0051636D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780B16AFE80A0051636D /* zip.c */; };
 		04C1782316AFE80A0051636D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780F16AFE80A0051636D /* SSZipArchive.m */; };
-		04C1782916AFE9D40051636D /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C1782816AFE9D40051636D /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		042024CA16B0104E007148BA /* LSFontInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontInfo.h; sourceTree = "<group>"; };
+		042024CB16B0104E007148BA /* LSFontInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontInfo.m; sourceTree = "<group>"; };
+		042024CE16B013CD007148BA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0448842A16AFD824000EA0FB /* libLSFontLoader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLSFontLoader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448842D16AFD824000EA0FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0448843116AFD824000EA0FB /* LSFontLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSFontLoader-Prefix.pch"; sourceTree = "<group>"; };
@@ -117,7 +125,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042024D416B0163B007148BA /* libz.1.2.5.dylib in Frameworks */,
+				042024D316B01633007148BA /* CoreGraphics.framework in Frameworks */,
 				0448842E16AFD824000EA0FB /* Foundation.framework in Frameworks */,
+				042024D516B01640007148BA /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C1782916AFE9D40051636D /* libz.1.2.5.dylib in Frameworks */,
+				04303F4F16B017D7005F9DA0 /* CoreText.framework in Frameworks */,
+				04303F4E16B0179A005F9DA0 /* libz.1.2.5.dylib in Frameworks */,
 				04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */,
 				0448844216AFD9A8000EA0FB /* UIKit.framework in Frameworks */,
 				0448844316AFD9A8000EA0FB /* Foundation.framework in Frameworks */,
@@ -161,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				04C1782816AFE9D40051636D /* libz.1.2.5.dylib */,
+				042024CE16B013CD007148BA /* CoreText.framework */,
 				0448842D16AFD824000EA0FB /* Foundation.framework */,
 				0448844116AFD9A8000EA0FB /* UIKit.framework */,
 				0448844416AFD9A8000EA0FB /* CoreGraphics.framework */,
@@ -175,6 +188,8 @@
 				0448843416AFD824000EA0FB /* LSFontLoader.m */,
 				04C177FC16AFE2A80051636D /* LSFontAsset.h */,
 				04C177FD16AFE2A80051636D /* LSFontAsset.m */,
+				042024CA16B0104E007148BA /* LSFontInfo.h */,
+				042024CB16B0104E007148BA /* LSFontInfo.m */,
 				04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */,
 				04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */,
 				0448843016AFD824000EA0FB /* Supporting Files */,
@@ -372,6 +387,7 @@
 				04C1782116AFE80A0051636D /* unzip.c in Sources */,
 				04C1782216AFE80A0051636D /* zip.c in Sources */,
 				04C1782316AFE80A0051636D /* SSZipArchive.m in Sources */,
+				042024CC16B0104E007148BA /* LSFontInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
