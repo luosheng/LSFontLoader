@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <CoreText/CoreText.h>
 #import "LSPropertyListRequestOperation.h"
 #import "LSFontAsset.h"
 
@@ -15,6 +17,7 @@
 + (instancetype)sharedLoader;
 - (void)fetchManifest;
 - (void)downloadFont:(LSFontAsset *)fontAsset;
+- (void)loadFont:(LSFontAsset *)fontAsset;
 
 @property (nonatomic, strong) NSArray *fontInfoList;
 @property (nonatomic, copy) NSString *fontPath;
