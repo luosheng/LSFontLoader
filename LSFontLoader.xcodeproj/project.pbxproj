@@ -10,6 +10,17 @@
 		0448842E16AFD824000EA0FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842D16AFD824000EA0FB /* Foundation.framework */; };
 		0448843316AFD824000EA0FB /* LSFontLoader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0448843216AFD824000EA0FB /* LSFontLoader.h */; };
 		0448843516AFD824000EA0FB /* LSFontLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448843416AFD824000EA0FB /* LSFontLoader.m */; };
+		0448844216AFD9A8000EA0FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448844116AFD9A8000EA0FB /* UIKit.framework */; };
+		0448844316AFD9A8000EA0FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842D16AFD824000EA0FB /* Foundation.framework */; };
+		0448844516AFD9A8000EA0FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448844416AFD9A8000EA0FB /* CoreGraphics.framework */; };
+		0448844B16AFD9A8000EA0FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0448844916AFD9A8000EA0FB /* InfoPlist.strings */; };
+		0448844D16AFD9A8000EA0FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448844C16AFD9A8000EA0FB /* main.m */; };
+		0448845116AFD9A8000EA0FB /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448845016AFD9A8000EA0FB /* LSAppDelegate.m */; };
+		0448845316AFD9A8000EA0FB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448845216AFD9A8000EA0FB /* Default.png */; };
+		0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448845416AFD9A8000EA0FB /* Default@2x.png */; };
+		0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448845616AFD9A8000EA0FB /* Default-568h@2x.png */; };
+		0448845A16AFD9A8000EA0FB /* LSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448845916AFD9A8000EA0FB /* LSViewController.m */; };
+		0448845D16AFD9A8000EA0FB /* LSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448845B16AFD9A8000EA0FB /* LSViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +42,21 @@
 		0448843116AFD824000EA0FB /* LSFontLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSFontLoader-Prefix.pch"; sourceTree = "<group>"; };
 		0448843216AFD824000EA0FB /* LSFontLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSFontLoader.h; sourceTree = "<group>"; };
 		0448843416AFD824000EA0FB /* LSFontLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSFontLoader.m; sourceTree = "<group>"; };
+		0448843F16AFD9A8000EA0FB /* LSFontLoaderExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSFontLoaderExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0448844116AFD9A8000EA0FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0448844416AFD9A8000EA0FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0448844816AFD9A8000EA0FB /* LSFontLoaderExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LSFontLoaderExample-Info.plist"; sourceTree = "<group>"; };
+		0448844A16AFD9A8000EA0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0448844C16AFD9A8000EA0FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0448844E16AFD9A8000EA0FB /* LSFontLoaderExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSFontLoaderExample-Prefix.pch"; sourceTree = "<group>"; };
+		0448844F16AFD9A8000EA0FB /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
+		0448845016AFD9A8000EA0FB /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
+		0448845216AFD9A8000EA0FB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0448845416AFD9A8000EA0FB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0448845616AFD9A8000EA0FB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0448845816AFD9A8000EA0FB /* LSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSViewController.h; sourceTree = "<group>"; };
+		0448845916AFD9A8000EA0FB /* LSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSViewController.m; sourceTree = "<group>"; };
+		0448845C16AFD9A8000EA0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LSViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +68,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0448843C16AFD9A8000EA0FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0448844216AFD9A8000EA0FB /* UIKit.framework in Frameworks */,
+				0448844316AFD9A8000EA0FB /* Foundation.framework in Frameworks */,
+				0448844516AFD9A8000EA0FB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0448842F16AFD824000EA0FB /* LSFontLoader */,
+				0448844616AFD9A8000EA0FB /* LSFontLoaderExample */,
 				0448842C16AFD824000EA0FB /* Frameworks */,
 				0448842B16AFD824000EA0FB /* Products */,
 			);
@@ -58,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0448842A16AFD824000EA0FB /* libLSFontLoader.a */,
+				0448843F16AFD9A8000EA0FB /* LSFontLoaderExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				0448842D16AFD824000EA0FB /* Foundation.framework */,
+				0448844116AFD9A8000EA0FB /* UIKit.framework */,
+				0448844416AFD9A8000EA0FB /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,6 +124,33 @@
 			isa = PBXGroup;
 			children = (
 				0448843116AFD824000EA0FB /* LSFontLoader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0448844616AFD9A8000EA0FB /* LSFontLoaderExample */ = {
+			isa = PBXGroup;
+			children = (
+				0448844F16AFD9A8000EA0FB /* LSAppDelegate.h */,
+				0448845016AFD9A8000EA0FB /* LSAppDelegate.m */,
+				0448845816AFD9A8000EA0FB /* LSViewController.h */,
+				0448845916AFD9A8000EA0FB /* LSViewController.m */,
+				0448845B16AFD9A8000EA0FB /* LSViewController.xib */,
+				0448844716AFD9A8000EA0FB /* Supporting Files */,
+			);
+			path = LSFontLoaderExample;
+			sourceTree = "<group>";
+		};
+		0448844716AFD9A8000EA0FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0448844816AFD9A8000EA0FB /* LSFontLoaderExample-Info.plist */,
+				0448844916AFD9A8000EA0FB /* InfoPlist.strings */,
+				0448844C16AFD9A8000EA0FB /* main.m */,
+				0448844E16AFD9A8000EA0FB /* LSFontLoaderExample-Prefix.pch */,
+				0448845216AFD9A8000EA0FB /* Default.png */,
+				0448845416AFD9A8000EA0FB /* Default@2x.png */,
+				0448845616AFD9A8000EA0FB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +175,23 @@
 			productReference = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		0448843E16AFD9A8000EA0FB /* LSFontLoaderExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0448845E16AFD9A8000EA0FB /* Build configuration list for PBXNativeTarget "LSFontLoaderExample" */;
+			buildPhases = (
+				0448843B16AFD9A8000EA0FB /* Sources */,
+				0448843C16AFD9A8000EA0FB /* Frameworks */,
+				0448843D16AFD9A8000EA0FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LSFontLoaderExample;
+			productName = LSFontLoaderExample;
+			productReference = 0448843F16AFD9A8000EA0FB /* LSFontLoaderExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,9 +214,25 @@
 			projectRoot = "";
 			targets = (
 				0448842916AFD824000EA0FB /* LSFontLoader */,
+				0448843E16AFD9A8000EA0FB /* LSFontLoaderExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0448843D16AFD9A8000EA0FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0448844B16AFD9A8000EA0FB /* InfoPlist.strings in Resources */,
+				0448845316AFD9A8000EA0FB /* Default.png in Resources */,
+				0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */,
+				0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */,
+				0448845D16AFD9A8000EA0FB /* LSViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0448842616AFD824000EA0FB /* Sources */ = {
@@ -143,7 +243,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0448843B16AFD9A8000EA0FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0448844D16AFD9A8000EA0FB /* main.m in Sources */,
+				0448845116AFD9A8000EA0FB /* LSAppDelegate.m in Sources */,
+				0448845A16AFD9A8000EA0FB /* LSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0448844916AFD9A8000EA0FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0448844A16AFD9A8000EA0FB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0448845B16AFD9A8000EA0FB /* LSViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0448845C16AFD9A8000EA0FB /* en */,
+			);
+			name = LSViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0448843616AFD824000EA0FB /* Debug */ = {
@@ -217,6 +346,31 @@
 			};
 			name = Release;
 		};
+		0448845F16AFD9A8000EA0FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LSFontLoaderExample/LSFontLoaderExample-Prefix.pch";
+				INFOPLIST_FILE = "LSFontLoaderExample/LSFontLoaderExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0448846016AFD9A8000EA0FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LSFontLoaderExample/LSFontLoaderExample-Prefix.pch";
+				INFOPLIST_FILE = "LSFontLoaderExample/LSFontLoaderExample-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -234,6 +388,14 @@
 			buildConfigurations = (
 				0448843916AFD824000EA0FB /* Debug */,
 				0448843A16AFD824000EA0FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0448845E16AFD9A8000EA0FB /* Build configuration list for PBXNativeTarget "LSFontLoaderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0448845F16AFD9A8000EA0FB /* Debug */,
+				0448846016AFD9A8000EA0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
