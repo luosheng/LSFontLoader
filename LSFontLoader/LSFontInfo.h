@@ -1,5 +1,5 @@
 //
-//  LSFontAsset.h
+//  LSFontInfo.h
 //  LSFontLoader
 //
 //  Created by Luo Sheng on 13-1-23.
@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LSFontAsset : NSObject {
+@interface LSFontInfo : NSObject {
 	NSDictionary *_info;
 }
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
-@property (nonatomic, readonly, strong) NSURL *downloadURL;
-@property (nonatomic, readonly, strong) NSArray *infoList;
+@property (nonatomic, readonly, copy) NSString *familyName;
 
 @end
