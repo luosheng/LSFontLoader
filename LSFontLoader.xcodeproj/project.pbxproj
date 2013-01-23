@@ -33,6 +33,11 @@
 		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
 		04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */; };
 		04C177FE16AFE2A80051636D /* LSFontInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FD16AFE2A80051636D /* LSFontInfo.m */; };
+		04C1781F16AFE80A0051636D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780516AFE80A0051636D /* ioapi.c */; };
+		04C1782016AFE80A0051636D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780716AFE80A0051636D /* mztools.c */; };
+		04C1782116AFE80A0051636D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780916AFE80A0051636D /* unzip.c */; };
+		04C1782216AFE80A0051636D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780B16AFE80A0051636D /* zip.c */; };
+		04C1782316AFE80A0051636D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780F16AFE80A0051636D /* SSZipArchive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,6 +97,17 @@
 		04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPropertyListRequestOperation.m; sourceTree = "<group>"; };
 		04C177FC16AFE2A80051636D /* LSFontInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontInfo.h; sourceTree = "<group>"; };
 		04C177FD16AFE2A80051636D /* LSFontInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontInfo.m; sourceTree = "<group>"; };
+		04C1780416AFE80A0051636D /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		04C1780516AFE80A0051636D /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		04C1780616AFE80A0051636D /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		04C1780716AFE80A0051636D /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		04C1780816AFE80A0051636D /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		04C1780916AFE80A0051636D /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		04C1780A16AFE80A0051636D /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		04C1780B16AFE80A0051636D /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		04C1780C16AFE80A0051636D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		04C1780E16AFE80A0051636D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		04C1780F16AFE80A0051636D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +136,7 @@
 		0448841F16AFD824000EA0FB = {
 			isa = PBXGroup;
 			children = (
+				04C177FF16AFE80A0051636D /* SSZipArchive */,
 				044884C116AFDCBC000EA0FB /* AFNetworking */,
 				0448842F16AFD824000EA0FB /* LSFontLoader */,
 				0448844616AFD9A8000EA0FB /* LSFontLoaderExample */,
@@ -223,6 +240,33 @@
 			path = AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
+		04C177FF16AFE80A0051636D /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				04C1780316AFE80A0051636D /* minizip */,
+				04C1780E16AFE80A0051636D /* SSZipArchive.h */,
+				04C1780F16AFE80A0051636D /* SSZipArchive.m */,
+			);
+			name = SSZipArchive;
+			path = ssziparchive;
+			sourceTree = "<group>";
+		};
+		04C1780316AFE80A0051636D /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				04C1780416AFE80A0051636D /* crypt.h */,
+				04C1780516AFE80A0051636D /* ioapi.c */,
+				04C1780616AFE80A0051636D /* ioapi.h */,
+				04C1780716AFE80A0051636D /* mztools.c */,
+				04C1780816AFE80A0051636D /* mztools.h */,
+				04C1780916AFE80A0051636D /* unzip.c */,
+				04C1780A16AFE80A0051636D /* unzip.h */,
+				04C1780B16AFE80A0051636D /* zip.c */,
+				04C1780C16AFE80A0051636D /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,6 +363,11 @@
 				044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */,
 				04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */,
 				04C177FE16AFE2A80051636D /* LSFontInfo.m in Sources */,
+				04C1781F16AFE80A0051636D /* ioapi.c in Sources */,
+				04C1782016AFE80A0051636D /* mztools.c in Sources */,
+				04C1782116AFE80A0051636D /* unzip.c in Sources */,
+				04C1782216AFE80A0051636D /* zip.c in Sources */,
+				04C1782316AFE80A0051636D /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

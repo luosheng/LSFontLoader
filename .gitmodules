@@ -1,3 +1,6 @@
 [submodule "AFNetworking"]
 	path = AFNetworking
 	url = git://github.com/AFNetworking/AFNetworking.git
+[submodule "ssziparchive"]
+	path = ssziparchive
+	url = git://github.com/soffes/ssziparchive.git
