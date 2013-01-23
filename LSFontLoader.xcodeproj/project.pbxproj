@@ -30,6 +30,7 @@
 		044884DB16AFDCBC000EA0FB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D016AFDCBC000EA0FB /* AFURLConnectionOperation.m */; };
 		044884DC16AFDCBC000EA0FB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D216AFDCBC000EA0FB /* AFXMLRequestOperation.m */; };
 		044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */; };
+		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */,
 				0448844216AFD9A8000EA0FB /* UIKit.framework in Frameworks */,
 				0448844316AFD9A8000EA0FB /* Foundation.framework in Frameworks */,
 				0448844516AFD9A8000EA0FB /* CoreGraphics.framework in Frameworks */,
@@ -455,6 +457,7 @@
 				0448843A16AFD824000EA0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0448845E16AFD9A8000EA0FB /* Build configuration list for PBXNativeTarget "LSFontLoaderExample" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +466,7 @@
 				0448846016AFD9A8000EA0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
