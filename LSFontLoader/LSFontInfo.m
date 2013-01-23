@@ -22,4 +22,20 @@
 	return _info[@"FontFamilyName"];
 }
 
+- (NSString *)name {
+	return _info[@"PostScriptFontName"];
+}
+
+- (NSString *)displayNameForLocale:(NSLocale *)locale {
+	NSDictionary *displayNames = _info[@"DisplayNames"];
+	NSString *displayName = displayNames[locale.localeIdentifier];
+	if (!displayName) {
+		displayName = displayNames[@"en"];
+	}
+	if (!displayName) {
+		displayName = displayNames[displayNames.allKeys[0]];
+	}
+	return displayName;
+}
+
 @end

@@ -15,5 +15,8 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, readonly, copy) NSString *familyName;
+@property (nonatomic, readonly, copy) NSString *name;
+
+- (NSString *)displayNameForLocale:(NSLocale *)locale;
 
 @end
