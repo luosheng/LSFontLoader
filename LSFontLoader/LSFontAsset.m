@@ -1,14 +1,14 @@
 //
-//  LSFontInfo.m
+//  LSFontAsset.m
 //  LSFontLoader
 //
 //  Created by Luo Sheng on 13-1-23.
 //  Copyright (c) 2013年 Luo Sheng. All rights reserved.
 //
 
-#import "LSFontInfo.h"
+#import "LSFontAsset.h"
 
-@implementation LSFontInfo
+@implementation LSFontAsset
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];

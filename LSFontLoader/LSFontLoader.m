@@ -25,7 +25,7 @@
 		NSArray *assets = propertyList[@"Assets"];
 		NSMutableArray *array = [NSMutableArray array];
 		[assets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			LSFontInfo *info = [[LSFontInfo alloc] initWithDictionary:obj];
+			LSFontAsset *info = [[LSFontAsset alloc] initWithDictionary:obj];
 			[array addObject:info];
 		}];
 		self.fontInfoList = [array copy];

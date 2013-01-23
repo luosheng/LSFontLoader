@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LSPropertyListRequestOperation.h"
-#import "LSFontInfo.h"
+#import "LSFontAsset.h"
 
 @interface LSFontLoader : NSObject
 
