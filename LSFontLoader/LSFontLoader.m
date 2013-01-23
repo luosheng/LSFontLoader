@@ -8,7 +8,6 @@
 
 #import "LSFontLoader.h"
 #import "SSZipArchive.h"
-#import "LSFontInfo.h"
 
 @interface LSFontLoader ()
 
@@ -36,7 +35,7 @@
 	return self;
 }
 
-- (void)fetchManifest {
+- (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock {
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"]];
 	LSPropertyListRequestOperation *operation = [LSPropertyListRequestOperation propertyListRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id propertyList) {
 		NSArray *assets = propertyList[@"Assets"];
@@ -46,6 +45,10 @@
 			[array addObject:info];
 		}];
 		self.fontAssets = [array copy];
+		
+		if (completeBlock) {
+			completeBlock();
+		}
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
 		
 	}];

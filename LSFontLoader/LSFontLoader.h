@@ -11,11 +11,12 @@
 #import <CoreText/CoreText.h>
 #import "LSPropertyListRequestOperation.h"
 #import "LSFontAsset.h"
+#import "LSFontInfo.h"
 
 @interface LSFontLoader : NSObject
 
 + (instancetype)sharedLoader;
-- (void)fetchManifest;
+- (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock;
 - (void)downloadFont:(LSFontAsset *)fontAsset;
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)loadFontForFamilyName:(NSString *)familyName;
