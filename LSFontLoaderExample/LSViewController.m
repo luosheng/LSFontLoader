@@ -62,4 +62,14 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	LSFontAsset *asset = _fontLoader.fontAssets[indexPath.section];
+	[_fontLoader loadFont:asset];
+	
+	LSFontInfo *info = asset.infoList[indexPath.row];
+	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 @end
