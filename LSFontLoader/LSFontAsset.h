@@ -16,5 +16,6 @@
 
 @property (nonatomic, readonly, strong) NSURL *downloadURL;
 @property (nonatomic, readonly, strong) NSArray *infoList;
+@property (nonatomic, readonly, strong) NSArray *designLanguages;
 
 @end

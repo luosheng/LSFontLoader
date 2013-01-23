@@ -42,4 +42,8 @@
 	return _infoList;
 }
 
+- (NSArray *)designLanguages {
+	return _info[@"FontDesignLanguages"];
+}
+
 @end
