@@ -14,7 +14,7 @@
 
 + (instancetype)sharedLoader;
 - (void)fetchManifest;
-- (void)downloadFont:(LSFontInfo *)fontInfo;
+- (void)downloadFont:(LSFontAsset *)fontAsset;
 
 @property (nonatomic, strong) NSArray *fontInfoList;
 @property (nonatomic, copy) NSString *fontPath;

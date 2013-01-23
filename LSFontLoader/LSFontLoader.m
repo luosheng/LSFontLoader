@@ -7,6 +7,8 @@
 //
 
 #import "LSFontLoader.h"
+#import "SSZipArchive.h"
+#import "LSFontInfo.h"
 
 @implementation LSFontLoader
 
@@ -43,11 +45,16 @@
 	[operation start];
 }
 
-- (void)downloadFont:(LSFontInfo *)fontInfo {
-	NSURL *downloadURL = fontInfo.downloadURL;
+- (void)downloadFont:(LSFontAsset *)fontAsset {
+	NSURL *downloadURL = fontAsset.downloadURL;
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
 	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
+	operation.completionBlock = ^{
+		LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
+		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:fontInfo.familyName];
+		[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
+	};
 	[operation start];
 }
 
