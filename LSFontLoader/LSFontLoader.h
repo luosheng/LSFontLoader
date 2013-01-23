@@ -17,5 +17,6 @@
 - (void)downloadFont:(LSFontInfo *)fontInfo;
 
 @property (nonatomic, strong) NSArray *fontInfoList;
+@property (nonatomic, copy) NSString *fontPath;
 
 @end
