@@ -10,4 +10,23 @@
 
 @implementation LSFontLoader
 
++ (instancetype)sharedLoader {
+	static dispatch_once_t onceToken;
+	static LSFontLoader *instance = nil;
+	dispatch_once(&onceToken, ^{
+    instance = [[LSFontLoader alloc] init];
+	});
+	return instance;
+}
+
+- (void)fetchManifest {
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"]];
+	LSPropertyListRequestOperation *operation = [LSPropertyListRequestOperation propertyListRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id propertyList) {
+		
+	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
+		
+	}];
+	[operation start];
+}
+
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LSPropertyListRequestOperation.h"
 
 @interface LSFontLoader : NSObject
+
++ (instancetype)sharedLoader;
+
+- (void)fetchManifest;
 
 @end
