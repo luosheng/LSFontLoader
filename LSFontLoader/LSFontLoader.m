@@ -55,7 +55,7 @@
 	[operation start];
 }
 
-- (void)downloadFont:(LSFontAsset *)fontAsset {
+- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock {
 	NSURL *downloadURL = fontAsset.downloadURL;
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
@@ -63,7 +63,10 @@
 	operation.completionBlock = ^{
 		LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
 		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:fontInfo.familyName];
-		[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+			[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
+			dispatch_async(dispatch_get_main_queue(), completeBlock);
+		});
 	};
 	[operation start];
 }

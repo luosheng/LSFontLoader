@@ -17,7 +17,7 @@
 
 + (instancetype)sharedLoader;
 - (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock;
-- (void)downloadFont:(LSFontAsset *)fontAsset;
+- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock;
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)loadFontForFamilyName:(NSString *)familyName;
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;

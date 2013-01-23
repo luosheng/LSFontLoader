@@ -74,8 +74,7 @@
 	if ([_fontLoader isFontDownloaded:asset]) {
 		applyFonts();
 	} else {
-		[_fontLoader downloadFont:asset];
-		applyFonts();
+		[_fontLoader downloadFont:asset withCompleteBlock:applyFonts];
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
