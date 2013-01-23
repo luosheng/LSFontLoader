@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LSFontLoader.h"
 
-@interface LSViewController : UIViewController
+@interface LSViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+	LSFontLoader *_fontLoader;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
