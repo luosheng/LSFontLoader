@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "LSPropertyListRequestOperation.h"
+#import "LSFontInfo.h"
 
 @interface LSFontLoader : NSObject
 
 + (instancetype)sharedLoader;
-
 - (void)fetchManifest;
+- (void)downloadFont:(LSFontInfo *)fontInfo;
 
 @property (nonatomic, strong) NSArray *fontInfoList;
 

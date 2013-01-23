@@ -7,7 +7,6 @@
 //
 
 #import "LSFontLoader.h"
-#import "LSFontInfo.h"
 
 @implementation LSFontLoader
 
@@ -33,6 +32,14 @@
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
 		
 	}];
+	[operation start];
+}
+
+- (void)downloadFont:(LSFontInfo *)fontInfo {
+	NSURL *downloadURL = fontInfo.downloadURL;
+	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
+	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
+	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
 	[operation start];
 }
 
