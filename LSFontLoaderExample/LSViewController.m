@@ -64,10 +64,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	LSFontAsset *asset = _fontLoader.fontAssets[indexPath.section];
-	[_fontLoader loadFont:asset];
 	
-	LSFontInfo *info = asset.infoList[indexPath.row];
-	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
+	void (^applyFonts)(void) = ^{
+		[_fontLoader loadFont:asset];
+		LSFontInfo *info = asset.infoList[indexPath.row];
+		[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
+	};
+	
+	if ([_fontLoader isFontDownloaded:asset]) {
+		applyFonts();
+	} else {
+		[_fontLoader downloadFont:asset];
+		applyFonts();
+	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
