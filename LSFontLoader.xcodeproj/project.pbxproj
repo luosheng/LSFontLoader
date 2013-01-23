@@ -32,6 +32,7 @@
 		044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */; };
 		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
 		04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */; };
+		04C177FE16AFE2A80051636D /* LSFontInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FD16AFE2A80051636D /* LSFontInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,8 @@
 		044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPropertyListRequestOperation.h; sourceTree = "<group>"; };
 		04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		04C177FC16AFE2A80051636D /* LSFontInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontInfo.h; sourceTree = "<group>"; };
+		04C177FD16AFE2A80051636D /* LSFontInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				0448843216AFD824000EA0FB /* LSFontLoader.h */,
 				0448843416AFD824000EA0FB /* LSFontLoader.m */,
+				04C177FC16AFE2A80051636D /* LSFontInfo.h */,
+				04C177FD16AFE2A80051636D /* LSFontInfo.m */,
 				04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */,
 				04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */,
 				0448843016AFD824000EA0FB /* Supporting Files */,
@@ -313,6 +318,7 @@
 				044884DC16AFDCBC000EA0FB /* AFXMLRequestOperation.m in Sources */,
 				044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */,
 				04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */,
+				04C177FE16AFE2A80051636D /* LSFontInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

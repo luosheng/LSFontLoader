@@ -15,4 +15,6 @@
 
 - (void)fetchManifest;
 
+@property (nonatomic, strong) NSArray *fontInfoList;
+
 @end
