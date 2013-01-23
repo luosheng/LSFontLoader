@@ -13,5 +13,6 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, strong) NSDictionary *info;
+@property (nonatomic, readonly) NSURL *downloadURL;
 
 @end

@@ -18,4 +18,10 @@
 	return self;
 }
 
+- (NSURL *)downloadURL {
+	NSString *baseURLString = self.info[@"__BaseURL"];
+	NSString *relativePathString = self.info[@"__RelativePath"];
+	return [NSURL URLWithString:[baseURLString stringByAppendingPathComponent:relativePathString]];
+}
+
 @end
