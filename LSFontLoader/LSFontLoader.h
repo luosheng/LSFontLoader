@@ -18,6 +18,7 @@
 - (void)fetchManifest;
 - (void)downloadFont:(LSFontAsset *)fontAsset;
 - (void)loadFont:(LSFontAsset *)fontAsset;
+- (void)loadFontForFamilyName:(NSString *)familyName;
 
 @property (nonatomic, strong) NSArray *fontInfoList;
 @property (nonatomic, copy) NSString *fontPath;

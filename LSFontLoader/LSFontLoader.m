@@ -58,16 +58,24 @@
 	[operation start];
 }
 
-- (void)loadFont:(LSFontAsset *)fontAsset {
-	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
-	NSString *fontSearchPath = [[self.fontPath stringByAppendingPathComponent:fontInfo.familyName] stringByAppendingPathComponent:@"AssetData"];
+- (void)loadFontForFamilyName:(NSString *)familyName {
+	NSString *fontSearchPath = [[self.fontPath stringByAppendingPathComponent:familyName] stringByAppendingPathComponent:@"AssetData"];
 	NSArray *fontNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fontSearchPath error:nil];
 	if (fontNames) {
 		NSString *fontName = fontNames.lastObject;
 		NSURL *fontURL = [NSURL fileURLWithPath:[fontSearchPath stringByAppendingPathComponent:fontName]];
 		CFErrorRef error;
-		CTFontManagerRegisterFontsForURL((__bridge CFURLRef)(fontURL), kCTFontManagerScopeProcess, &error);
+		if (!CTFontManagerRegisterFontsForURL((__bridge CFURLRef)(fontURL), kCTFontManagerScopeProcess, &error)) {
+			CFStringRef errorDescription = CFErrorCopyDescription(error);
+			NSLog(@"Failed to load font: %@", errorDescription);
+			CFRelease(errorDescription);
+		}
 	}
+}
+
+- (void)loadFont:(LSFontAsset *)fontAsset {
+	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
+	[self loadFontForFamilyName:fontInfo.familyName];
 }
 
 @end
