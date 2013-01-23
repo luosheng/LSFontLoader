@@ -20,7 +20,7 @@
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)loadFontForFamilyName:(NSString *)familyName;
 
-@property (nonatomic, strong) NSArray *fontInfoList;
+@property (nonatomic, readonly, strong) NSArray *fontAssets;
 @property (nonatomic, copy) NSString *fontPath;
 
 @end

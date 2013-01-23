@@ -10,6 +10,12 @@
 #import "SSZipArchive.h"
 #import "LSFontInfo.h"
 
+@interface LSFontLoader ()
+
+@property (nonatomic, strong) NSArray *fontAssets;
+
+@end
+
 @implementation LSFontLoader
 
 + (instancetype)sharedLoader {
@@ -25,6 +31,7 @@
 	self = [super init];
 	if (self) {
 		_fontPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"LSFonts"];
+		_fontAssets = @[];
 	}
 	return self;
 }
@@ -38,7 +45,7 @@
 			LSFontAsset *info = [[LSFontAsset alloc] initWithDictionary:obj];
 			[array addObject:info];
 		}];
-		self.fontInfoList = [array copy];
+		self.fontAssets = [array copy];
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
 		
 	}];
