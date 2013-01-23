@@ -13,6 +13,7 @@
 		042024D516B01640007148BA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042024CE16B013CD007148BA /* CoreText.framework */; };
 		04303F4E16B0179A005F9DA0 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C1782816AFE9D40051636D /* libz.1.2.5.dylib */; };
 		04303F4F16B017D7005F9DA0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042024CE16B013CD007148BA /* CoreText.framework */; };
+		04303F5116B02670005F9DA0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 04303F5016B02670005F9DA0 /* index.html */; };
 		0448842E16AFD824000EA0FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842D16AFD824000EA0FB /* Foundation.framework */; };
 		0448843316AFD824000EA0FB /* LSFontLoader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0448843216AFD824000EA0FB /* LSFontLoader.h */; };
 		0448843516AFD824000EA0FB /* LSFontLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448843416AFD824000EA0FB /* LSFontLoader.m */; };
@@ -63,6 +64,7 @@
 		042024CA16B0104E007148BA /* LSFontInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontInfo.h; sourceTree = "<group>"; };
 		042024CB16B0104E007148BA /* LSFontInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontInfo.m; sourceTree = "<group>"; };
 		042024CE16B013CD007148BA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		04303F5016B02670005F9DA0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = ../../../github/WebViewExternalFonts/index.html; sourceTree = "<group>"; };
 		0448842A16AFD824000EA0FB /* libLSFontLoader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLSFontLoader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448842D16AFD824000EA0FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0448843116AFD824000EA0FB /* LSFontLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSFontLoader-Prefix.pch"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		0448844716AFD9A8000EA0FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04303F5016B02670005F9DA0 /* index.html */,
 				0448844816AFD9A8000EA0FB /* LSFontLoaderExample-Info.plist */,
 				0448844916AFD9A8000EA0FB /* InfoPlist.strings */,
 				0448844C16AFD9A8000EA0FB /* main.m */,
@@ -360,6 +363,7 @@
 				0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */,
 				0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */,
 				0448845D16AFD9A8000EA0FB /* LSViewController.xib in Resources */,
+				04303F5116B02670005F9DA0 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

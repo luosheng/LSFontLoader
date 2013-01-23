@@ -20,6 +20,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 	
+	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
+	[self.webView loadRequest:request];
+	
 	_fontLoader = [LSFontLoader sharedLoader];
 	[_fontLoader fetchManifestWithCompleteBlock:^{
 		[self.tableView reloadData];
