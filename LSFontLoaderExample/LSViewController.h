@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LSFontLoader.h"
 
-@interface LSViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface LSViewController : UITableViewController {
 	LSFontLoader *_fontLoader;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end

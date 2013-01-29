@@ -14,15 +14,14 @@
 
 @implementation LSViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)loadView {
+	[super loadView];
+	
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 	
 	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
-	[self.webView loadRequest:request];
+	//	[self.webView loadRequest:request];
 	
 	_fontLoader = [LSFontLoader sharedLoader];
 	[_fontLoader fetchManifestWithCompleteBlock:^{
@@ -68,7 +67,7 @@
 	void (^applyFonts)(void) = ^{
 		[_fontLoader loadFont:asset];
 		LSFontInfo *info = asset.infoList[indexPath.row];
-		[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
+//		[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
 	};
 	
 	if ([_fontLoader isFontDownloaded:asset]) {

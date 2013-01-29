@@ -27,7 +27,6 @@
 		0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448845416AFD9A8000EA0FB /* Default@2x.png */; };
 		0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448845616AFD9A8000EA0FB /* Default-568h@2x.png */; };
 		0448845A16AFD9A8000EA0FB /* LSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448845916AFD9A8000EA0FB /* LSViewController.m */; };
-		0448845D16AFD9A8000EA0FB /* LSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448845B16AFD9A8000EA0FB /* LSViewController.xib */; };
 		044884D516AFDCBC000EA0FB /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884C316AFDCBC000EA0FB /* AFHTTPClient.m */; };
 		044884D616AFDCBC000EA0FB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884C516AFDCBC000EA0FB /* AFHTTPRequestOperation.m */; };
 		044884D716AFDCBC000EA0FB /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884C716AFDCBC000EA0FB /* AFImageRequestOperation.m */; };
@@ -84,7 +83,6 @@
 		0448845616AFD9A8000EA0FB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0448845816AFD9A8000EA0FB /* LSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSViewController.h; sourceTree = "<group>"; };
 		0448845916AFD9A8000EA0FB /* LSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSViewController.m; sourceTree = "<group>"; };
-		0448845C16AFD9A8000EA0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LSViewController.xib; sourceTree = "<group>"; };
 		044884C216AFDCBC000EA0FB /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		044884C316AFDCBC000EA0FB /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		044884C416AFDCBC000EA0FB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				0448845016AFD9A8000EA0FB /* LSAppDelegate.m */,
 				0448845816AFD9A8000EA0FB /* LSViewController.h */,
 				0448845916AFD9A8000EA0FB /* LSViewController.m */,
-				0448845B16AFD9A8000EA0FB /* LSViewController.xib */,
 				0448844716AFD9A8000EA0FB /* Supporting Files */,
 			);
 			path = LSFontLoaderExample;
@@ -362,7 +359,6 @@
 				0448845316AFD9A8000EA0FB /* Default.png in Resources */,
 				0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */,
 				0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */,
-				0448845D16AFD9A8000EA0FB /* LSViewController.xib in Resources */,
 				04303F5116B02670005F9DA0 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,14 +410,6 @@
 				0448844A16AFD9A8000EA0FB /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0448845B16AFD9A8000EA0FB /* LSViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0448845C16AFD9A8000EA0FB /* en */,
-			);
-			name = LSViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

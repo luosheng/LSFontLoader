@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[LSViewController alloc] initWithNibName:@"LSViewController" bundle:nil];
+	self.viewController = [[LSViewController alloc] initWithStyle:UITableViewStylePlain];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
