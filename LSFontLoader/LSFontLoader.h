@@ -24,6 +24,6 @@
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
 
 @property (nonatomic, readonly, strong) NSArray *fontAssets;
-@property (nonatomic, copy) NSString *fontPath;
+@property (nonatomic, copy) NSString *fontBasePath;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "LSFontLoader.h"
 #import "SSZipArchive.h"
+#include <sys/xattr.h>
 
 @interface LSFontLoader ()
 
@@ -33,7 +34,7 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-		_fontPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"LSFonts"];
+		self.fontBasePath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"LSFonts"];
 		_fontAssets = @[];
 	}
 	return self;
@@ -66,7 +67,7 @@
 	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
 	[operation setDownloadProgressBlock:downloadProgressBlock];
 	operation.completionBlock = ^{
-		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
+		NSString *destinationPath = [self.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 			[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
 			dispatch_async(dispatch_get_main_queue(), completeBlock);
@@ -100,17 +101,33 @@
 }
 
 - (void)loadFont:(LSFontAsset *)fontAsset {
-	NSString *fontPath = [[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
+	NSString *fontPath = [[self.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
 	[self loadFontForPath:fontPath];
 }
 
 - (void)unloadFont:(LSFontAsset *)fontAsset {
-	NSString *fontPath = [[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
+	NSString *fontPath = [[self.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
 	[self unloadFontForPath:fontPath];
 }
 
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset {
-	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]]];
+	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]]];
+}
+
+
+- (void)setFontBasePath:(NSString *)fontBasePath {
+	_fontBasePath = fontBasePath;
+	
+	// Don't back up the font directory.
+	NSURL *fontPathURL = [NSURL fileURLWithPath:_fontBasePath];
+	if ([[NSFileManager defaultManager] createDirectoryAtURL:fontPathURL withIntermediateDirectories:YES attributes:nil error:nil]) {
+		const char* filePath = [[fontPathURL path] fileSystemRepresentation];
+		
+		const char* attrName = "com.apple.MobileBackup";
+		u_int8_t attrValue = 1;
+		
+		setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
+	}
 }
 
 #pragma mark - Private methods
