@@ -20,6 +20,7 @@
 - (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock;
 - (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock downloadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))downloadProgressBlock;
 - (void)loadFont:(LSFontAsset *)fontAsset;
+- (void)unloadFont:(LSFontAsset *)fontAsset;
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
 
 @property (nonatomic, readonly, strong) NSArray *fontAssets;

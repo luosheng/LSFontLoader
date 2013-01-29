@@ -13,6 +13,7 @@
 
 - (NSString *)pathForFontAsset:(LSFontAsset *)asset;
 - (void)loadFontForPath:(NSString *)fontPath;
+- (void)unloadFontForPath:(NSString *)fontPath;
 
 @property (nonatomic, strong) NSArray *fontAssets;
 
@@ -88,9 +89,24 @@
 	}
 }
 
+- (void)unloadFontForPath:(NSString *)fontPath {
+	NSArray *fontNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fontPath error:nil];
+	if (fontNames) {
+		NSString *fontName = fontNames.lastObject;
+		NSURL *fontURL = [NSURL fileURLWithPath:[fontPath stringByAppendingPathComponent:fontName]];
+		CFErrorRef error;
+		CTFontManagerUnregisterFontsForURL((__bridge CFURLRef)(fontURL), kCTFontManagerScopeProcess, &error);
+	}
+}
+
 - (void)loadFont:(LSFontAsset *)fontAsset {
 	NSString *fontPath = [[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
 	[self loadFontForPath:fontPath];
+}
+
+- (void)unloadFont:(LSFontAsset *)fontAsset {
+	NSString *fontPath = [[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
+	[self unloadFontForPath:fontPath];
 }
 
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset {
