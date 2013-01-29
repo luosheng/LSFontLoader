@@ -38,6 +38,7 @@
 		044884DB16AFDCBC000EA0FB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D016AFDCBC000EA0FB /* AFURLConnectionOperation.m */; };
 		044884DC16AFDCBC000EA0FB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D216AFDCBC000EA0FB /* AFXMLRequestOperation.m */; };
 		044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */; };
+		0480C08516B7EB260099048F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C07016B7EB260099048F /* MBProgressHUD.m */; };
 		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
 		04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */; };
 		04C177FE16AFE2A80051636D /* LSFontAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FD16AFE2A80051636D /* LSFontAsset.m */; };
@@ -107,6 +108,8 @@
 		044884D216AFDCBC000EA0FB /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		044884D316AFDCBC000EA0FB /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		0480C06F16B7EB260099048F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0480C07016B7EB260099048F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPropertyListRequestOperation.h; sourceTree = "<group>"; };
 		04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPropertyListRequestOperation.m; sourceTree = "<group>"; };
 		04C177FC16AFE2A80051636D /* LSFontAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontAsset.h; sourceTree = "<group>"; };
@@ -156,8 +159,6 @@
 		0448841F16AFD824000EA0FB = {
 			isa = PBXGroup;
 			children = (
-				04C177FF16AFE80A0051636D /* SSZipArchive */,
-				044884C116AFDCBC000EA0FB /* AFNetworking */,
 				0448842F16AFD824000EA0FB /* LSFontLoader */,
 				0448844616AFD9A8000EA0FB /* LSFontLoaderExample */,
 				0448842C16AFD824000EA0FB /* Frameworks */,
@@ -189,6 +190,8 @@
 		0448842F16AFD824000EA0FB /* LSFontLoader */ = {
 			isa = PBXGroup;
 			children = (
+				04C177FF16AFE80A0051636D /* SSZipArchive */,
+				044884C116AFDCBC000EA0FB /* AFNetworking */,
 				0448843216AFD824000EA0FB /* LSFontLoader.h */,
 				0448843416AFD824000EA0FB /* LSFontLoader.m */,
 				04C177FC16AFE2A80051636D /* LSFontAsset.h */,
@@ -213,6 +216,7 @@
 		0448844616AFD9A8000EA0FB /* LSFontLoaderExample */ = {
 			isa = PBXGroup;
 			children = (
+				0480C05416B7EB260099048F /* MBProgressHUD */,
 				0448844F16AFD9A8000EA0FB /* LSAppDelegate.h */,
 				0448845016AFD9A8000EA0FB /* LSAppDelegate.m */,
 				0448845816AFD9A8000EA0FB /* LSViewController.h */,
@@ -264,8 +268,17 @@
 				044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */,
 			);
 			name = AFNetworking;
-			path = AFNetworking/AFNetworking;
+			path = ../AFNetworking/AFNetworking;
 			sourceTree = "<group>";
+		};
+		0480C05416B7EB260099048F /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0480C06F16B7EB260099048F /* MBProgressHUD.h */,
+				0480C07016B7EB260099048F /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = SOURCE_ROOT;
 		};
 		04C177FF16AFE80A0051636D /* SSZipArchive */ = {
 			isa = PBXGroup;
@@ -275,7 +288,7 @@
 				04C1780F16AFE80A0051636D /* SSZipArchive.m */,
 			);
 			name = SSZipArchive;
-			path = ssziparchive;
+			path = ../ssziparchive;
 			sourceTree = "<group>";
 		};
 		04C1780316AFE80A0051636D /* minizip */ = {
@@ -408,6 +421,7 @@
 				0448845116AFD9A8000EA0FB /* LSAppDelegate.m in Sources */,
 				0448845A16AFD9A8000EA0FB /* LSViewController.m in Sources */,
 				041B64F916B7CCB800B734D2 /* LSWebViewController.m in Sources */,
+				0480C08516B7EB260099048F /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

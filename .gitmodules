@@ -4,3 +4,6 @@
 [submodule "ssziparchive"]
 	path = ssziparchive
 	url = git://github.com/soffes/ssziparchive.git
+[submodule "MBProgressHUD"]
+	path = MBProgressHUD
+	url = git://github.com/matej/MBProgressHUD.git
