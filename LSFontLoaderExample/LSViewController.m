@@ -7,6 +7,7 @@
 //
 
 #import "LSViewController.h"
+#import "LSWebViewController.h"
 
 @interface LSViewController ()
 
@@ -18,10 +19,6 @@
 	[super loadView];
 	
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-	
-	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
-	//	[self.webView loadRequest:request];
 	
 	_fontLoader = [LSFontLoader sharedLoader];
 	[_fontLoader fetchManifestWithCompleteBlock:^{
@@ -66,8 +63,9 @@
 	
 	void (^applyFonts)(void) = ^{
 		[_fontLoader loadFont:asset];
-		LSFontInfo *info = asset.infoList[indexPath.row];
-//		[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"document.body.style.fontFamily='%@'", info.name]];
+		LSWebViewController *webViewController = [[LSWebViewController alloc] init];
+		webViewController.fontInfo = asset.infoList[indexPath.row];
+		[self.navigationController pushViewController:webViewController animated:YES];
 	};
 	
 	if ([_fontLoader isFontDownloaded:asset]) {
