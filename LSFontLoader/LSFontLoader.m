@@ -12,6 +12,7 @@
 @interface LSFontLoader ()
 
 - (NSString *)pathForFontAsset:(LSFontAsset *)asset;
+- (void)loadFontForPath:(NSString *)fontPath;
 
 @property (nonatomic, strong) NSArray *fontAssets;
 
@@ -64,8 +65,7 @@
 	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
 	[operation setDownloadProgressBlock:downloadProgressBlock];
 	operation.completionBlock = ^{
-		LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
-		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:fontInfo.familyName];
+		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 			[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
 			dispatch_async(dispatch_get_main_queue(), completeBlock);
@@ -74,12 +74,11 @@
 	[operation start];
 }
 
-- (void)loadFontForFamilyName:(NSString *)familyName {
-	NSString *fontSearchPath = [[self.fontPath stringByAppendingPathComponent:familyName] stringByAppendingPathComponent:@"AssetData"];
-	NSArray *fontNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fontSearchPath error:nil];
+- (void)loadFontForPath:(NSString *)fontPath {
+	NSArray *fontNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fontPath error:nil];
 	if (fontNames) {
 		NSString *fontName = fontNames.lastObject;
-		NSURL *fontURL = [NSURL fileURLWithPath:[fontSearchPath stringByAppendingPathComponent:fontName]];
+		NSURL *fontURL = [NSURL fileURLWithPath:[fontPath stringByAppendingPathComponent:fontName]];
 		CFErrorRef error;
 		if (!CTFontManagerRegisterFontsForURL((__bridge CFURLRef)(fontURL), kCTFontManagerScopeProcess, &error)) {
 			CFStringRef errorDescription = CFErrorCopyDescription(error);
@@ -90,13 +89,12 @@
 }
 
 - (void)loadFont:(LSFontAsset *)fontAsset {
-	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
-	[self loadFontForFamilyName:fontInfo.familyName];
+	NSString *fontPath = [[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]] stringByAppendingPathComponent:@"AssetData"];
+	[self loadFontForPath:fontPath];
 }
 
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset {
-	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
-	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontPath stringByAppendingPathComponent:fontInfo.familyName]];
+	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontPath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]]];
 }
 
 #pragma mark - Private methods
