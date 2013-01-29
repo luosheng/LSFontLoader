@@ -39,6 +39,8 @@
 		044884DC16AFDCBC000EA0FB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D216AFDCBC000EA0FB /* AFXMLRequestOperation.m */; };
 		044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */; };
 		0480C08516B7EB260099048F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480C07016B7EB260099048F /* MBProgressHUD.m */; };
+		0480C08F16B802050099048F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0480C08E16B802050099048F /* MobileCoreServices.framework */; };
+		0480C09116B802150099048F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0480C09016B802150099048F /* SystemConfiguration.framework */; };
 		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
 		04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */; };
 		04C177FE16AFE2A80051636D /* LSFontAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FD16AFE2A80051636D /* LSFontAsset.m */; };
@@ -110,6 +112,8 @@
 		044884D416AFDCBC000EA0FB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		0480C06F16B7EB260099048F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		0480C07016B7EB260099048F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0480C08E16B802050099048F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0480C09016B802150099048F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPropertyListRequestOperation.h; sourceTree = "<group>"; };
 		04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPropertyListRequestOperation.m; sourceTree = "<group>"; };
 		04C177FC16AFE2A80051636D /* LSFontAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontAsset.h; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0480C09116B802150099048F /* SystemConfiguration.framework in Frameworks */,
+				0480C08F16B802050099048F /* MobileCoreServices.framework in Frameworks */,
 				04303F4F16B017D7005F9DA0 /* CoreText.framework in Frameworks */,
 				04303F4E16B0179A005F9DA0 /* libz.1.2.5.dylib in Frameworks */,
 				04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */,
@@ -164,7 +170,10 @@
 				0448842C16AFD824000EA0FB /* Frameworks */,
 				0448842B16AFD824000EA0FB /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 1;
 		};
 		0448842B16AFD824000EA0FB /* Products */ = {
 			isa = PBXGroup;
@@ -179,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				04C1782816AFE9D40051636D /* libz.1.2.5.dylib */,
+				0480C09016B802150099048F /* SystemConfiguration.framework */,
+				0480C08E16B802050099048F /* MobileCoreServices.framework */,
 				042024CE16B013CD007148BA /* CoreText.framework */,
 				0448842D16AFD824000EA0FB /* Foundation.framework */,
 				0448844116AFD9A8000EA0FB /* UIKit.framework */,
