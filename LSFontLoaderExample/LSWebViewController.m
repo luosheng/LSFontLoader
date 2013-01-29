@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
+	[self.webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning
