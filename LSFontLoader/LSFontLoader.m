@@ -55,11 +55,12 @@
 	[operation start];
 }
 
-- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock {
+- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
 	NSURL *downloadURL = fontAsset.downloadURL;
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
 	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
+	[operation setDownloadProgressBlock:downloadProgressBlock];
 	operation.completionBlock = ^{
 		LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
 		NSString *destinationPath = [self.fontPath stringByAppendingPathComponent:fontInfo.familyName];

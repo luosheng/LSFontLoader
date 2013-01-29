@@ -12,12 +12,13 @@
 #import "LSPropertyListRequestOperation.h"
 #import "LSFontAsset.h"
 #import "LSFontInfo.h"
+#import "AFNetworking.h"
 
 @interface LSFontLoader : NSObject
 
 + (instancetype)sharedLoader;
 - (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock;
-- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock;
+- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock downloadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))downloadProgressBlock;
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)loadFontForFamilyName:(NSString *)familyName;
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
