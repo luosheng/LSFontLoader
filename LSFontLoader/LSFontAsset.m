@@ -46,4 +46,9 @@
 	return _info[@"FontDesignLanguages"];
 }
 
+- (NSString *)familyName {
+	LSFontInfo *info = self.infoList.lastObject;
+	return info.familyName;
+}
+
 @end

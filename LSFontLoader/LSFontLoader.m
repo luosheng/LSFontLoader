@@ -11,6 +11,8 @@
 
 @interface LSFontLoader ()
 
+- (NSString *)pathForFontAsset:(LSFontAsset *)asset;
+
 @property (nonatomic, strong) NSArray *fontAssets;
 
 @end
@@ -95,6 +97,17 @@
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset {
 	LSFontInfo *fontInfo = fontAsset.infoList.lastObject;
 	return [[NSFileManager defaultManager] fileExistsAtPath:[self.fontPath stringByAppendingPathComponent:fontInfo.familyName]];
+}
+
+#pragma mark - Private methods
+
+- (NSString *)pathForFontAsset:(LSFontAsset *)asset {
+	NSMutableArray *array = [NSMutableArray array];
+	[asset.infoList enumerateObjectsUsingBlock:^(LSFontInfo *info, NSUInteger idx, BOOL *stop) {
+		[array addObject:info.name];
+	}];
+	NSString *path = [NSString stringWithFormat:@"[%@]%@", asset.familyName, [array componentsJoinedByString:@"_"]];
+	return path;
 }
 
 @end
