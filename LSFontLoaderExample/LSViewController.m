@@ -18,16 +18,21 @@
 - (void)loadView {
 	[super loadView];
 	
+	self.title = @"LSFontLoader Demo";
+	
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+	
+	_HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:_HUD];
+	[_HUD show:YES];
 	
 	_fontLoader = [LSFontLoader sharedLoader];
 	[_fontLoader fetchManifestWithCompleteBlock:^{
-		[self.tableView reloadData];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[_HUD hide:YES];
+			[self.tableView reloadData];
+		});
 	}];
-	
-	_HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-	_HUD.mode = MBProgressHUDModeDeterminate;
-	[self.navigationController.view addSubview:_HUD];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,6 +93,7 @@
 	} else {
 		_HUD.progress = 0.0;
 		[_HUD show:YES];
+		_HUD.mode = MBProgressHUDModeDeterminate;
 		[_fontLoader downloadFont:asset withCompleteBlock:applyFonts downloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
 			_HUD.progress = (float)totalBytesRead / totalBytesExpectedToRead;
 		}];
