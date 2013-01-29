@@ -39,4 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIWebView delegate methods
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+	NSString *jsCommand = [NSString stringWithFormat:@"document.body.style.fontFamily = '%@'", self.fontInfo.name];
+	[webView stringByEvaluatingJavaScriptFromString:jsCommand];
+}
+
 @end

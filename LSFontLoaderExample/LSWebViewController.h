@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LSFontInfo.h"
 
-@interface LSWebViewController : UIViewController
+@interface LSWebViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) LSFontInfo *fontInfo;
 
 @end
