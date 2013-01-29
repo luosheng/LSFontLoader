@@ -67,7 +67,12 @@
 	LSFontAsset *asset = _fontLoader.fontAssets[indexPath.section];
 	
 	void (^applyFonts)(void) = ^{
+		if (_selectedFontAsset) {
+			[_fontLoader unloadFont:_selectedFontAsset];
+		}
+		_selectedFontAsset = asset;
 		[_fontLoader loadFont:asset];
+		
 		LSWebViewController *webViewController = [[LSWebViewController alloc] init];
 		webViewController.fontInfo = asset.infoList[indexPath.row];
 		[self.navigationController pushViewController:webViewController animated:YES];

@@ -12,6 +12,7 @@
 
 @interface LSViewController : UITableViewController {
 	LSFontLoader *_fontLoader;
+	LSFontAsset *_selectedFontAsset;
 	MBProgressHUD *_HUD;
 }
 
