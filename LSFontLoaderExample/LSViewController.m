@@ -24,6 +24,10 @@
 	[_fontLoader fetchManifestWithCompleteBlock:^{
 		[self.tableView reloadData];
 	}];
+	
+	_HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	_HUD.mode = MBProgressHUDModeDeterminate;
+	[self.navigationController.view addSubview:_HUD];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,12 +70,17 @@
 		LSWebViewController *webViewController = [[LSWebViewController alloc] init];
 		webViewController.fontInfo = asset.infoList[indexPath.row];
 		[self.navigationController pushViewController:webViewController animated:YES];
+		[_HUD hide:YES];
 	};
 	
 	if ([_fontLoader isFontDownloaded:asset]) {
 		applyFonts();
 	} else {
-		[_fontLoader downloadFont:asset withCompleteBlock:applyFonts];
+		_HUD.progress = 0.0;
+		[_HUD show:YES];
+		[_fontLoader downloadFont:asset withCompleteBlock:applyFonts downloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+			_HUD.progress = (float)totalBytesRead / totalBytesExpectedToRead;
+		}];
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
