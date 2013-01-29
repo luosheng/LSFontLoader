@@ -40,7 +40,7 @@
 	return self;
 }
 
-- (void)fetchManifestWithCompleteBlock:(void (^)(void))completeBlock {
+- (void)fetchManifestWithCompletionBlock:(void (^)(void))completionBlock {
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"]];
 	LSPropertyListRequestOperation *operation = [LSPropertyListRequestOperation propertyListRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id propertyList) {
 		NSArray *assets = propertyList[@"Assets"];
@@ -51,8 +51,8 @@
 		}];
 		self.fontAssets = [array copy];
 		
-		if (completeBlock) {
-			completeBlock();
+		if (completionBlock) {
+			completionBlock();
 		}
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
 		
@@ -60,7 +60,7 @@
 	[operation start];
 }
 
-- (void)downloadFont:(LSFontAsset *)fontAsset withCompleteBlock:(void (^)(void))completeBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
+- (void)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
 	NSURL *downloadURL = fontAsset.downloadURL;
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
@@ -70,7 +70,7 @@
 		NSString *destinationPath = [self.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 			[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
-			dispatch_async(dispatch_get_main_queue(), completeBlock);
+			dispatch_async(dispatch_get_main_queue(), completionBlock);
 		});
 	};
 	[operation start];

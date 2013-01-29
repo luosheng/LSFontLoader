@@ -27,7 +27,7 @@
 	[_HUD show:YES];
 	
 	_fontLoader = [LSFontLoader sharedLoader];
-	[_fontLoader fetchManifestWithCompleteBlock:^{
+	[_fontLoader fetchManifestWithCompletionBlock:^{
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[_HUD hide:YES];
 			[self.tableView reloadData];
@@ -94,7 +94,7 @@
 		_HUD.progress = 0.0;
 		[_HUD show:YES];
 		_HUD.mode = MBProgressHUDModeDeterminate;
-		[_fontLoader downloadFont:asset withCompleteBlock:applyFonts downloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+		[_fontLoader downloadFont:asset withCompletionBlock:applyFonts downloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
 			_HUD.progress = (float)totalBytesRead / totalBytesExpectedToRead;
 		}];
 	}
