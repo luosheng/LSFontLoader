@@ -59,6 +59,7 @@
 	NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:designLanguage];
 	LSFontInfo *info = asset.infoList[indexPath.row];
 	cell.textLabel.text = [info displayNameForLocale:locale];
+	cell.accessoryType = [_fontLoader isFontDownloaded:asset] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	return cell;
 }
 
@@ -70,7 +71,11 @@
 		LSWebViewController *webViewController = [[LSWebViewController alloc] init];
 		webViewController.fontInfo = asset.infoList[indexPath.row];
 		[self.navigationController pushViewController:webViewController animated:YES];
-		[_HUD hide:YES];
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+			[_HUD hide:YES];
+		});
 	};
 	
 	if ([_fontLoader isFontDownloaded:asset]) {
