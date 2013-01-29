@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041B64F916B7CCB800B734D2 /* LSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B64F716B7CCB800B734D2 /* LSWebViewController.m */; };
+		041B64FA16B7CCB800B734D2 /* LSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041B64F816B7CCB800B734D2 /* LSWebViewController.xib */; };
 		042024CC16B0104E007148BA /* LSFontInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 042024CB16B0104E007148BA /* LSFontInfo.m */; };
 		042024D316B01633007148BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448844416AFD9A8000EA0FB /* CoreGraphics.framework */; };
 		042024D416B0163B007148BA /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C1782816AFE9D40051636D /* libz.1.2.5.dylib */; };
@@ -60,6 +62,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		041B64F616B7CCB800B734D2 /* LSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSWebViewController.h; sourceTree = "<group>"; };
+		041B64F716B7CCB800B734D2 /* LSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSWebViewController.m; sourceTree = "<group>"; };
+		041B64F816B7CCB800B734D2 /* LSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSWebViewController.xib; sourceTree = "<group>"; };
 		042024CA16B0104E007148BA /* LSFontInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontInfo.h; sourceTree = "<group>"; };
 		042024CB16B0104E007148BA /* LSFontInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontInfo.m; sourceTree = "<group>"; };
 		042024CE16B013CD007148BA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -212,6 +217,9 @@
 				0448845016AFD9A8000EA0FB /* LSAppDelegate.m */,
 				0448845816AFD9A8000EA0FB /* LSViewController.h */,
 				0448845916AFD9A8000EA0FB /* LSViewController.m */,
+				041B64F616B7CCB800B734D2 /* LSWebViewController.h */,
+				041B64F716B7CCB800B734D2 /* LSWebViewController.m */,
+				041B64F816B7CCB800B734D2 /* LSWebViewController.xib */,
 				0448844716AFD9A8000EA0FB /* Supporting Files */,
 			);
 			path = LSFontLoaderExample;
@@ -360,6 +368,7 @@
 				0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */,
 				0448845716AFD9A8000EA0FB /* Default-568h@2x.png in Resources */,
 				04303F5116B02670005F9DA0 /* index.html in Resources */,
+				041B64FA16B7CCB800B734D2 /* LSWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +407,7 @@
 				0448844D16AFD9A8000EA0FB /* main.m in Sources */,
 				0448845116AFD9A8000EA0FB /* LSAppDelegate.m in Sources */,
 				0448845A16AFD9A8000EA0FB /* LSViewController.m in Sources */,
+				041B64F916B7CCB800B734D2 /* LSWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
