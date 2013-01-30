@@ -21,6 +21,7 @@
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)unloadFont:(LSFontAsset *)fontAsset;
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
+- (LSFontAsset *)fontAssetContaingFontWithName:(NSString *)fontName;
 
 @property (nonatomic, readonly, strong) NSArray *fontAssets;
 @property (nonatomic, copy) NSString *fontBasePath;

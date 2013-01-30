@@ -130,6 +130,20 @@
 	}
 }
 
+- (LSFontAsset *)fontAssetContaingFontWithName:(NSString *)fontName {
+	__block LSFontAsset *result = nil;
+	[self.fontAssets enumerateObjectsUsingBlock:^(LSFontAsset *fontAsset, NSUInteger idx, BOOL *stop) {
+		NSIndexSet *indexSet = [fontAsset.infoList indexesOfObjectsPassingTest:^BOOL(LSFontInfo *fontInfo, NSUInteger idx, BOOL *stop) {
+			return [fontInfo.name isEqualToString:fontName];
+		}];
+		if (indexSet.count > 0) {
+			result = fontAsset;
+			stop = YES;
+		}
+	}];
+	return result;
+}
+
 #pragma mark - Private methods
 
 - (NSString *)pathForFontAsset:(LSFontAsset *)asset {
