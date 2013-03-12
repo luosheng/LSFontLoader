@@ -50,7 +50,10 @@
 		_fontAssets = @[];
 		
 		NSURL *fontPathURL = [NSURL fileURLWithPath:self.class.fontBasePath];
-		if ([[NSFileManager defaultManager] createDirectoryAtURL:fontPathURL withIntermediateDirectories:YES attributes:nil error:nil]) {
+		
+		NSFileManager *fileManager = [NSFileManager defaultManager];
+		
+		if ([fileManager createDirectoryAtURL:fontPathURL withIntermediateDirectories:YES attributes:nil error:nil]) {
 			const char* filePath = [[fontPathURL path] fileSystemRepresentation];
 			
 			const char* attrName = "com.apple.MobileBackup";
@@ -58,6 +61,14 @@
 			
 			setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
 		}
+		
+		if (![fileManager fileExistsAtPath:self.class.localFontAssetListPath]) {
+			NSError *error = nil;
+			NSString *srcPath = [[NSBundle mainBundle] pathForResource:[FONT_ASSET_URL lastPathComponent] ofType:nil];
+			[fileManager copyItemAtPath:srcPath toPath:self.class.localFontAssetListPath error:&error];
+		}
+		
+		[self parseFontAssetListForPath:self.class.localFontAssetListPath];
 	}
 	return self;
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04032F9916EF607600702DF4 /* com_apple_MobileAsset_Font.xml in Resources */ = {isa = PBXBuildFile; fileRef = 04032F9816EF596300702DF4 /* com_apple_MobileAsset_Font.xml */; };
 		041B64F916B7CCB800B734D2 /* LSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B64F716B7CCB800B734D2 /* LSWebViewController.m */; };
 		041B64FA16B7CCB800B734D2 /* LSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041B64F816B7CCB800B734D2 /* LSWebViewController.xib */; };
 		041B64FC16B7CE6000B734D2 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 041B64FB16B7CE6000B734D2 /* index.html */; };
@@ -384,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04032F9916EF607600702DF4 /* com_apple_MobileAsset_Font.xml in Resources */,
 				0448844B16AFD9A8000EA0FB /* InfoPlist.strings in Resources */,
 				0448845316AFD9A8000EA0FB /* Default.png in Resources */,
 				0448845516AFD9A8000EA0FB /* Default@2x.png in Resources */,
