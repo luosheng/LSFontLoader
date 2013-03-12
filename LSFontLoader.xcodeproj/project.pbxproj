@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04032F9816EF596300702DF4 /* com_apple_MobileAsset_Font.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = com_apple_MobileAsset_Font.xml; sourceTree = "<group>"; };
 		041B64F616B7CCB800B734D2 /* LSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSWebViewController.h; sourceTree = "<group>"; };
 		041B64F716B7CCB800B734D2 /* LSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSWebViewController.m; sourceTree = "<group>"; };
 		041B64F816B7CCB800B734D2 /* LSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSWebViewController.xib; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		0448843016AFD824000EA0FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04032F9816EF596300702DF4 /* com_apple_MobileAsset_Font.xml */,
 				0448843116AFD824000EA0FB /* LSFontLoader-Prefix.pch */,
 			);
 			name = "Supporting Files";
