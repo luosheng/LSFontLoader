@@ -24,6 +24,6 @@
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
 - (LSFontAsset *)fontAssetContaingFontWithName:(NSString *)fontName;
 
-@property (nonatomic, readonly, strong) NSArray *fontAssets;
+@property (nonatomic, readonly, copy) NSArray *fontAssets;
 
 @end

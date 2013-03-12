@@ -10,13 +10,18 @@
 #import "SSZipArchive.h"
 #include <sys/xattr.h>
 
+#define FONT_ASSET_URL @"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"
+
 @interface LSFontLoader ()
 
 - (NSString *)pathForFontAsset:(LSFontAsset *)asset;
+- (void)parseFontAssetListForPath:(NSString *)fontAssetListPath;
 - (void)loadFontForPath:(NSString *)fontPath;
 - (void)unloadFontForPath:(NSString *)fontPath;
 
-@property (nonatomic, strong) NSArray *fontAssets;
++ (NSString *)localFontAssetListPath;
+
+@property (nonatomic, copy) NSArray *fontAssets;
 
 @end
 
@@ -33,6 +38,10 @@
 
 + (NSString *)fontBasePath {
 	return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"LSFonts"];
+}
+
++ (NSString *)localFontAssetListPath {
+	return [self.fontBasePath stringByAppendingPathComponent:[FONT_ASSET_URL lastPathComponent]];
 }
 
 - (id)init {
@@ -53,23 +62,32 @@
 	return self;
 }
 
-- (void)fetchManifestWithCompletionBlock:(void (^)(void))completionBlock {
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"]];
-	LSPropertyListRequestOperation *operation = [LSPropertyListRequestOperation propertyListRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id propertyList) {
+- (void)parseFontAssetListForPath:(NSString *)fontAssetListPath {
+	NSPropertyListFormat format;
+	NSError *error = nil;
+	NSData *fontAssetListData = [NSData dataWithContentsOfFile:fontAssetListPath];
+	id propertyList = [NSPropertyListSerialization propertyListWithData:fontAssetListData options:NSPropertyListImmutable format:&format error:&error];
+	if (!error) {
 		NSArray *assets = propertyList[@"Assets"];
 		NSMutableArray *array = [NSMutableArray array];
 		[assets enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			LSFontAsset *info = [[LSFontAsset alloc] initWithDictionary:obj];
 			[array addObject:info];
 		}];
-		self.fontAssets = [array copy];
-		
+		self.fontAssets = array;
+	}
+}
+
+- (void)fetchManifestWithCompletionBlock:(void (^)(void))completionBlock {
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:FONT_ASSET_URL]];
+	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+	operation.outputStream = [[NSOutputStream alloc] initToFileAtPath:self.class.localFontAssetListPath append:NO];
+	operation.completionBlock = ^{
+		[self parseFontAssetListForPath:self.class.localFontAssetListPath];
 		if (completionBlock) {
 			completionBlock();
 		}
-	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id propertyList) {
-		
-	}];
+	};
 	[operation start];
 }
 
