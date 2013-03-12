@@ -16,6 +16,7 @@
 @interface LSFontLoader : NSObject
 
 + (instancetype)sharedLoader;
++ (NSString *)fontBasePath;
 - (void)fetchManifestWithCompletionBlock:(void (^)(void))completionBlock;
 - (void)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))downloadProgressBlock;
 - (void)loadFont:(LSFontAsset *)fontAsset;
@@ -24,6 +25,5 @@
 - (LSFontAsset *)fontAssetContaingFontWithName:(NSString *)fontName;
 
 @property (nonatomic, readonly, strong) NSArray *fontAssets;
-@property (nonatomic, copy) NSString *fontBasePath;
 
 @end
