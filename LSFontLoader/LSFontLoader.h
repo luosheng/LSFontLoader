@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
-#import "LSPropertyListRequestOperation.h"
 #import "LSFontAsset.h"
 #import "LSFontInfo.h"
 #import "AFNetworking.h"

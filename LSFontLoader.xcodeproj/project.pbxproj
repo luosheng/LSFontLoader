@@ -42,7 +42,6 @@
 		0480C08F16B802050099048F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0480C08E16B802050099048F /* MobileCoreServices.framework */; };
 		0480C09116B802150099048F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0480C09016B802150099048F /* SystemConfiguration.framework */; };
 		04C177F816AFDF530051636D /* libLSFontLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448842A16AFD824000EA0FB /* libLSFontLoader.a */; };
-		04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */; };
 		04C177FE16AFE2A80051636D /* LSFontAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C177FD16AFE2A80051636D /* LSFontAsset.m */; };
 		04C1781F16AFE80A0051636D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780516AFE80A0051636D /* ioapi.c */; };
 		04C1782016AFE80A0051636D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 04C1780716AFE80A0051636D /* mztools.c */; };
@@ -115,8 +114,6 @@
 		0480C07016B7EB260099048F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		0480C08E16B802050099048F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0480C09016B802150099048F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPropertyListRequestOperation.m; sourceTree = "<group>"; };
 		04C177FC16AFE2A80051636D /* LSFontAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFontAsset.h; sourceTree = "<group>"; };
 		04C177FD16AFE2A80051636D /* LSFontAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFontAsset.m; sourceTree = "<group>"; };
 		04C1780416AFE80A0051636D /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -210,8 +207,6 @@
 				04C177FD16AFE2A80051636D /* LSFontAsset.m */,
 				042024CA16B0104E007148BA /* LSFontInfo.h */,
 				042024CB16B0104E007148BA /* LSFontInfo.m */,
-				04C177F916AFE10E0051636D /* LSPropertyListRequestOperation.h */,
-				04C177FA16AFE10E0051636D /* LSPropertyListRequestOperation.m */,
 				0448843016AFD824000EA0FB /* Supporting Files */,
 			);
 			path = LSFontLoader;
@@ -415,7 +410,6 @@
 				044884DB16AFDCBC000EA0FB /* AFURLConnectionOperation.m in Sources */,
 				044884DC16AFDCBC000EA0FB /* AFXMLRequestOperation.m in Sources */,
 				044884DD16AFDCBC000EA0FB /* UIImageView+AFNetworking.m in Sources */,
-				04C177FB16AFE10E0051636D /* LSPropertyListRequestOperation.m in Sources */,
 				04C177FE16AFE2A80051636D /* LSFontAsset.m in Sources */,
 				04C1781F16AFE80A0051636D /* ioapi.c in Sources */,
 				04C1782016AFE80A0051636D /* mztools.c in Sources */,
