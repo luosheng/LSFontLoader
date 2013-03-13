@@ -103,7 +103,7 @@
 	[operation start];
 }
 
-- (void)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
+- (NSOperation *)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
 	NSURL *downloadURL = fontAsset.downloadURL;
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
 	AFDownloadRequestOperation *operation = [[AFDownloadRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL] targetPath:tempPath shouldResume:YES];
@@ -116,6 +116,7 @@
 		});
 	};
 	[operation start];
+	return operation;
 }
 
 - (void)loadFontForPath:(NSString *)fontPath {

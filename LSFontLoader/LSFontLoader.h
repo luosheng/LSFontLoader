@@ -16,7 +16,7 @@
 + (instancetype)sharedLoader;
 + (NSString *)fontBasePath;
 - (void)fetchManifestWithCompletionBlock:(void (^)(void))completionBlock;
-- (void)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))downloadProgressBlock;
+- (NSOperation *)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead))downloadProgressBlock;
 - (void)loadFont:(LSFontAsset *)fontAsset;
 - (void)unloadFont:(LSFontAsset *)fontAsset;
 - (BOOL)isFontDownloaded:(LSFontAsset *)fontAsset;
