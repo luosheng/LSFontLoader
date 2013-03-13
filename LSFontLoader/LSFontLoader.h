@@ -10,7 +10,6 @@
 #import <CoreText/CoreText.h>
 #import "LSFontAsset.h"
 #import "LSFontInfo.h"
-#import "AFNetworking.h"
 
 @interface LSFontLoader : NSObject
 

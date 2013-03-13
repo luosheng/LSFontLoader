@@ -9,6 +9,7 @@
 #import "LSFontLoader.h"
 #import "SSZipArchive.h"
 #include <sys/xattr.h>
+#import "AFDownloadRequestOperation.h"
 
 #define FONT_ASSET_URL @"http://mesu.apple.com/assets/com_apple_MobileAsset_Font/com_apple_MobileAsset_Font.xml"
 
@@ -104,9 +105,8 @@
 
 - (void)downloadFont:(LSFontAsset *)fontAsset withCompletionBlock:(void (^)(void))completionBlock downloadProgressBlock:(void (^)(NSUInteger, long long, long long))downloadProgressBlock {
 	NSURL *downloadURL = fontAsset.downloadURL;
-	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL]];
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
-	operation.outputStream = [NSOutputStream outputStreamToFileAtPath:tempPath append:NO];
+	AFDownloadRequestOperation *operation = [[AFDownloadRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL] targetPath:tempPath shouldResume:YES];
 	[operation setDownloadProgressBlock:downloadProgressBlock];
 	operation.completionBlock = ^{
 		NSString *destinationPath = [self.class.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
