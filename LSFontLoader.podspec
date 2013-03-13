@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LSFontLoader"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "LSFontLoader will download and load additional fonts provided in iOS 6."
   s.homepage     = "https://github.com/luosheng/LSFontLoader"
   s.license      = 'MIT'
