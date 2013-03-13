@@ -7,3 +7,6 @@
 [submodule "MBProgressHUD"]
 	path = MBProgressHUD
 	url = git://github.com/matej/MBProgressHUD.git
+[submodule "AFDownloadRequestOperation"]
+	path = AFDownloadRequestOperation
+	url = git://github.com/steipete/AFDownloadRequestOperation.git
