@@ -31,6 +31,10 @@
 	return [NSURL URLWithString:[baseURLString stringByAppendingPathComponent:relativePathString]];
 }
 
+- (long long)downloadSize {
+	return [_info[@"_DownloadSize"] longLongValue];
+}
+
 - (NSArray *)infoList {
 	if (!_infoList) {
 		NSMutableArray *list = [NSMutableArray array];
