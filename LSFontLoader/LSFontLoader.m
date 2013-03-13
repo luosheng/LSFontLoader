@@ -108,13 +108,13 @@
 	NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:downloadURL.lastPathComponent];
 	AFDownloadRequestOperation *operation = [[AFDownloadRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:downloadURL] targetPath:tempPath shouldResume:YES];
 	[operation setDownloadProgressBlock:downloadProgressBlock];
-	operation.completionBlock = ^{
+	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSString *destinationPath = [self.class.fontBasePath stringByAppendingPathComponent:[self pathForFontAsset:fontAsset]];
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 			[SSZipArchive unzipFileAtPath:tempPath toDestination:destinationPath];
 			dispatch_async(dispatch_get_main_queue(), completionBlock);
 		});
-	};
+	} failure:nil];
 	[operation start];
 	return operation;
 }
