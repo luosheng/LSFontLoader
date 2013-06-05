@@ -165,7 +165,7 @@
 		}];
 		if (indexSet.count > 0) {
 			result = fontAsset;
-			stop = YES;
+			*stop = YES;
 		}
 	}];
 	return result;
